@@ -1,0 +1,19 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <h4>Editar equipo</h4>
+    <form action="" method="post">
+        <input type="text" name="nombre" value="{{ equipo.nombre }}" class="form-control mb-2">
+        <select name="marca" class="form-control mb-2">
+            {% for marca in marcas %}
+                <option value="{{ marca.id }}" {% if marca.id == equipo.marca_id %}selected{% endif %}>{{ marca.nombre }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="modelo" value="{{ equipo.modelo }}" class="form-control mb-2">
+        <input type="number" name="precio" value="{{ equipo.precio }}" class="form-control mb-2">
+        <input type="number" name="anio_de_fabricacion" value="{{ equipo.anio_de_fabricacion }}" class="form-control mb-2">
+        <input type="text" name="caracteristicas" value="{{ equipo.caracteristicas }}" class="form-control mb-2">
+        <button type="submit" class="btn btn-success">Actualizar</button>
+    </form>
+{% endblock %}
+

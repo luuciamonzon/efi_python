@@ -1,0 +1,12 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Eliminar el equipo</h4>
+        <p>¿Estás segurx de que quieres eliminar "{{ equipo.nombre }}"?</p>
+        <form action="" method="post">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás segurx de que quieres eliminar este equipo?');">Eliminar</button>
+        </form>
+        <a href="{{ url_for('equipos') }}" class="btn btn-secondary mt-3">Cancelar</a>
+    </div>
+{% endblock %}

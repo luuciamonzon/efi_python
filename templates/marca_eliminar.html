@@ -1,0 +1,12 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Eliminar la marca</h4>
+        <p>¿Estás segurx de que quieres eliminar "{{ marca.nombre }}"?</p>
+        <form action="" method="post">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás segurx de que quieres eliminar esta marca?');">Eliminar</button>
+        </form>
+        <a href="{{ url_for('marcas') }}" class="btn btn-secondary mt-3">Cancelar</a>
+    </div>
+{% endblock %}

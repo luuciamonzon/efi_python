@@ -1,0 +1,28 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h4>Editar proveedor</h4>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" value="{{ proveedor.nombre }}" class="form-control mb-2">
+        </div>
+        <div class="form-group">
+            <label for="nro_telefono">Número de teléfono</label>
+            <input type="text" name="nro_telefono" value="{{ proveedor.nro_telefono }}" class="form-control mb-2">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" name="direccion" value="{{ proveedor.direccion }}" class="form-control mb-2">
+        </div>
+        <div class="form-group">
+            <label for="cuit">CUIT</label>
+            <input type="text" name="cuit" value="{{ proveedor.cuit }}" class="form-control mb-2">
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
+{% endblock %}
+
+

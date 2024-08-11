@@ -1,0 +1,13 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Eliminar proveedor</h4>
+        <p>¿Estás segurx de que quieres eliminar "{{ proveedor.nombre }}"?</p>
+        <form action="{{ url_for('proveedor_eliminar', id=proveedor.id) }}" method="post">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        <a href="{{ url_for('proveedores') }}" class="btn btn-secondary mt-3">Cancelar</a>
+    </div>
+{% endblock %}
+

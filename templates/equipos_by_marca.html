@@ -1,0 +1,10 @@
+{% extends "templates_base.html" %}
+
+{% block content %}
+<h4>Listado de equipos de la marca{{marca}}</h4>
+    {% for equipo in equipos %}
+    <li> 
+        {{equipo.nombre}} -{{equipo.marca}} -{{equipo.modelo}} - {{equipo.precio}} - {{equipo.anio_de_fabricacion}} - {{equipo.caracteristicas}} -
+    </li>
+    {% endfor %}
+{% endblock %}

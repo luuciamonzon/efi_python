@@ -1,0 +1,13 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Eliminar el reclamo</h4>
+        <p>¿Estás segurx de que quieres eliminar "{{ reclamo.nombre }}"?</p>
+        <form action="" method="post">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+        </form>
+        <a href="{{ url_for('reclamos') }}" class="btn btn-secondary mt-3">Cancelar</a>
+    </div>
+{% endblock %}
+

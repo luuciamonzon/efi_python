@@ -1,0 +1,30 @@
+{% extends "templates_base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h4>Agregar un nuevo reclamo:</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre">
+                <input type="text" name="nro_telefono" class="form-control mb-2" placeholder="Número de teléfono">
+                <input type="text" name="direccion" class="form-control mb-2" placeholder="Dirección">
+                <input type="text" name="detalle" class="form-control mb-2" placeholder="Detalle">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <h4>Listado de reclamos:</h4>
+            <ul class="list-unstyled">
+                {% for reclamo in reclamos %}
+                <li class="mb-2">
+                    <a href="{{ url_for('reclamo_editar', id=reclamo.id) }}" class="text-decoration-none text-dark">{{ reclamo.nombre }}</a>
+                    <a href="{{ url_for('reclamo_editar', id=reclamo.id) }}" class="btn btn-warning btn-sm ms-2">Editar</a>
+                    <a href="{{ url_for('reclamo_eliminar', id=reclamo.id) }}" class="btn btn-danger btn-sm ms-2" onclick="return confirm('¿Estás segurx de que quieres eliminar este reclamo?');">Eliminar</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

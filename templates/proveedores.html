@@ -1,0 +1,33 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-5 mx-auto">
+            <h4>Agregar un nuevo proveedor:</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre">
+                <input type="text" name="nro_telefono" class="form-control mb-2" placeholder="Número de teléfono">
+                <input type="text" name="direccion" class="form-control mb-2" placeholder="Dirección">
+                <input type="text" name="cuit" class="form-control mb-2" placeholder="CUIT">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Listado de proveedores:</h4>
+            <ul class="list-unstyled">
+                {% for proveedor in proveedores %}
+                <li class="mb-2">
+                    <a href="/proveedor/{{ proveedor.id }}/editar" class="text-decoration-none text-dark">{{ proveedor.nombre }} - {{ proveedor.cuit }}</a>
+                    <a href="/proveedor/{{ proveedor.id }}/editar" class="btn btn-warning btn-sm ms-2">Editar</a>
+                    <a href="/proveedores/{{ proveedor.id }}/eliminar" class="btn btn-danger btn-sm ms-2" onclick="return confirm('¿Estás seguro de que quieres eliminar este proveedor?');">Eliminar</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    
+    </div>
+</div>
+{% endblock %}

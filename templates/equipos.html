@@ -1,0 +1,37 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <h4>Crear un nuevo equipo:</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre">
+                <select name="marca" class="form-control mb-2"> 
+                    {% for marca in marcas %}
+                        <option value="{{ marca.id }}">{{ marca.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="modelo" class="form-control mb-2" placeholder="Modelo">
+                <input type="number" name="precio" class="form-control mb-2" placeholder="Precio">
+                <input type="number" max="2024" min="2000" name="anio_de_fabricacion" class="form-control mb-2" placeholder="Año de fabricación">
+                <input type="text" name="caracteristicas" class="form-control mb-2" placeholder="Características">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <h4>Stock de equipos:</h4>
+            <ul class="list-unstyled">
+                {% for equipo in equipos %}
+                <li class="mb-2">
+                    {{ equipo.marca }} - {{ equipo.modelo }} -
+                    <a href="{{ url_for('equipo_editar', id=equipo.id) }}" class="btn btn-warning btn-sm ms-2">Editar</a> 
+                    <a href="{{ url_for('equipo_eliminar', id=equipo.id) }}" class="btn btn-danger btn-sm ms-2" onclick="return confirm('¿Estás segurx de que quieres eliminar este equipo?');">Eliminar</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

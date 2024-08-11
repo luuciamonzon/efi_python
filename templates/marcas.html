@@ -1,0 +1,27 @@
+{% extends "templates_base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">  
+        <div class="col-6 mx-auto">
+            <h4>Agregar una nueva marca:</h4>
+            <form action="" method="post">
+                <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre de la marca">
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <h4>Listado de marcas:</h4>
+            <ul class="list-unstyled">
+            {% for marca in marcas %}
+            <li class="mb-2">
+                <a href="/marca/{{ marca.id }}/editar"class="text-decoration-none text-dark">{{ marca.nombre }}</a>
+                <a href="/marca/{{ marca.id }}/editar" class="btn btn-warning btn-sm ms-2">Editar</a> 
+                <a href="/marca/{{ marca.id }}/eliminar" class="btn btn-danger btn-sm ms-2" onclick="return confirm('¿Estás seguro de que quieres eliminar esta marca?');">Eliminar</a>
+            </li>
+            {% endfor %}
+           </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

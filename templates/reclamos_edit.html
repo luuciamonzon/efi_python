@@ -1,0 +1,12 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <h4>Editar reclamo</h4>
+    <form action="" method="post">
+        <input type="text" name="nombre" value="{{ reclamo.nombre }}" class="form-control mb-2">
+        <input type="text" name="nro_telefono" value="{{ reclamo.nro_telefono }}" class="form-control mb-2">
+        <input type="text" name="direccion" value="{{ reclamo.direccion }}" class="form-control mb-2">
+        <input type="text" name="detalle" value="{{ reclamo.reclamo }}" class="form-control mb-2">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+{% endblock %}

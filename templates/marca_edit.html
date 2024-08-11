@@ -1,0 +1,14 @@
+{% extends 'templates_base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Editar la marca</h4>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre de la marca</label>
+                <input type="text" name="nombre" value="{{ marca.nombre }}" class="form-control mb-2">
+            </div>
+            <button type="submit" class="btn btn-primary">Editar</button>
+        </form>
+    </div>
+{% endblock %}
