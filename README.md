@@ -1,6 +1,6 @@
 
 #Clonar el proyecto:
-    git clone https://https://github.com/luuciamonzon/efi_python
+    git clone https://https://github.com/luuciamonzon/efi_python.git
     cd efi_python
 #Crear el entorno virtual:
     python3 -m venv .env
