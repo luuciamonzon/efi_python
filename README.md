@@ -15,4 +15,4 @@
     flask db migrate -m "creacion de la migracion"\
     flask db upgrade\
 #Correr el proyecto:\
-    flask run --reload\
+    flask run --reload \
